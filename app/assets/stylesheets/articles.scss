@@ -1,0 +1,99 @@
+// Place all the styles related to the articles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+*{
+ 	margin: 0;
+ 	padding: 0;
+ 	box-sizing: border-box;
+ }
+
+.generate__title{
+	width: 100%;
+	height: 30px;
+}
+
+.main__container__wrapper{
+ 	width: 100%;
+ }
+
+.main__container__flex{
+	display: flex;
+	width: 100%;
+	position: relative;
+}
+
+.sidebar{
+ 	width: 25%;
+ 	height: 700px;
+ 	margin-left: 5%;
+ 	border: 2px solid grey;
+ 	position: sticky;
+ 	top: 30px;
+}
+
+
+.mainbar{
+	margin-left: 10%;
+	width: 60%;
+	min-height: 1000px;
+	border: 2px solid grey;
+	padding: 20px 4%;
+}
+
+// .trix-content{
+// 	overflow-wrap: break-word;
+// }
+
+
+.main__title{
+	text-align: center;
+}
+
+.articles{
+ 	display: flex;
+ 	flex-flow: row-reverse wrap-reverse;
+ 	justify-content: center;
+ 	width: 100%;
+}
+
+.articles__title{
+	text-align: center;
+	line-height: 100px;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.articles__box{
+	width: 35%;
+	margin: 1% 1%;
+	border-radius: 5px;
+	box-shadow: 0 1px 3px lighten(grey, 10%);
+	transition: all .3s;
+	&:hover{
+	    transform: scale(1.07);
+	    transition: all .3s;
+	}
+}
+
+.mainbar__title{
+	line-height: 100px;
+	text-align: center;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.mainbar__meta{
+	color: grey;
+	text-align: right;
+	line-height: 50px;
+	font-size: 12px;
+	width: 90%;
+	margin-right: 10%;
+}
+
+.subTitle{
+ 	text-decoration: none;
+ 	border-bottom: 1px solid lighten(grey,10%);
+ 	width: 80%;
+ 	margin: 0 auto;
+}

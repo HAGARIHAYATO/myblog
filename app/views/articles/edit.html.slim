@@ -1,0 +1,17 @@
+div.main__container__wrapper
+    - if @article.errors.any?
+        h2 次のエラーにより、記事が作成できませんでした。
+        ul
+            - @article.errors.full_messages.each do |msg|
+        li
+            = msg
+    h4.main__title EDIT__ARTICLE
+    div.generate
+	    = form_with model: @article, local: true do |f|
+	        p
+		        = f.label :title, "タイトル"
+		        = f.text_field :title, class: "generate__title"
+	        = f.label :text, "テキスト"
+	        = f.rich_text_area :text
+	        = f.submit
+	= link_to "back", articles_path

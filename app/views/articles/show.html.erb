@@ -1,0 +1,11 @@
+<div class="main__container__flex">
+	<div class="mainbar">
+		<h4 class="mainbar__title"><%= @article.title %></h4>
+		<p class="mainbar__meta"><%= @article.created_at.strftime("%Y-%m-%d") %></p>
+		<%= @article.text %>
+		<%= link_to 'back', root_path %>
+		<%= link_to 'edit', edit_article_path(@article) %>
+		<%= link_to 'delete', article_path(@article), method: :delete %>
+	</div>
+	<%= render 'articles/sidebar' %>
+</div>

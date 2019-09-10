@@ -1,0 +1,20 @@
+<div class="main__container__wrapper">
+	<h3 class="articles__title">ALL ARTICLES</h3>
+	<div class="articles">
+		<% @articles.each do |article| %>
+		    <div class="articles__box">
+				<%= link_to article_path(article), class: "subTitle" do %>
+					<p class="mainbar__title"><%= article.title %></p>
+					<p class="mainbar__meta"><%= article.created_at.strftime("%Y-%m-%d") %></p>
+				<% end %>
+		    </div>
+		<% end %>
+	</div>
+	<p>
+		<%= link_to 'go' ,new_article_path %>
+	</p>
+	<p>
+		<%= link_to 'logout' , destroy_user_session_path, method: :delete %>
+	</p>
+</div>
+

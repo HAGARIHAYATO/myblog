@@ -1,0 +1,26 @@
+doctype html
+html(lang="en")
+  head
+    title Myblog
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag('application', 'data-turbolinks-track': 'reload')
+  body
+    main.main
+      header.header
+        div.header__pict
+          p.header__pict__text CAN WEAR ANYTHING
+      nav.header__nav
+        div.box
+        div.box
+        div.box
+        div.box
+      div.main__container
+        - if flash[:notice]
+          div.flash
+            = flash[:notice]
+        = yield
+      footer.footer
+        p.footer__text &copy; blog.inc
+    = javascript_pack_tag('application', 'data-turbolinks-track': 'reload')
+
