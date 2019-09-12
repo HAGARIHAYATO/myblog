@@ -8,7 +8,7 @@ div.main__container__wrapper
 	        = f.label :text, "テキスト"
 	        = f.rich_text_area :text
             = f.label :category_id, "カテゴリー"
-            - @all = Category.all.map { |category| [category.id] }
-	        = f.select :category_id, @all
+            - @all = Category.order(:id).map { |category| [category.name, category.id] }
+	        = f.select :category_id, @all, {prompt:"Category"}, {required: 'true', autofocus: 'true', class: 'form-control'}
 	        = f.submit
 	= link_to "back", articles_path
