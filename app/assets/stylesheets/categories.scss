@@ -1,3 +1,25 @@
 // Place all the styles related to the categories controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.mainbar__title{
+	line-height: 100px;
+	text-align: center;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.mainbar__meta{
+	color: grey;
+	text-align: right;
+	line-height: 50px;
+	font-size: 12px;
+	width: 90%;
+	margin-right: 10%;
+}
+
+.subTitle{
+ 	text-decoration: none;
+ 	border-bottom: 1px solid lighten(grey,10%);
+ 	width: 80%;
+ 	margin: 0 auto;
+}

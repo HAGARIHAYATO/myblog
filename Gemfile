@@ -68,3 +68,7 @@ gem 'slim-rails'
 gem 'html2slim'
 
 gem 'pry-byebug'
+
+gem 'friendly_id'
+
+

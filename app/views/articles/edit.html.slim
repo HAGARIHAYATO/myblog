@@ -13,5 +13,7 @@ div.main__container__wrapper
 		        = f.text_field :title, class: "generate__title"
 	        = f.label :text, "テキスト"
 	        = f.rich_text_area :text
+	        //カテゴリーを選ぶところ追加
+	        = f.select :category, Category.all.map { |category| [category.name] }
 	        = f.submit
 	= link_to "back", articles_path

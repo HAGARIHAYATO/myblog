@@ -12,9 +12,10 @@ html(lang="en")
           p.header__pict__text CAN WEAR ANYTHING
       nav.header__nav
         div.box
-        div.box
-        div.box
-        div.box
+          = link_to 'All', articles_path, class: "header__nav__link"
+        - Category.all.each do |category|
+          div.box
+            = link_to category.name,category_path(category), class: "header__nav__link"
       div.main__container
         - if flash[:notice]
           div.flash

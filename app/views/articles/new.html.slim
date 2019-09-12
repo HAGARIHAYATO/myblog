@@ -1,10 +1,4 @@
 div.main__container__wrapper
-    - if @article.errors.any?
-        h2 次のエラーにより、記事が作成できませんでした。
-        ul
-            - @article.errors.full_messages.each do |msg|
-        li
-            = msg
     h4.main__title NEW__ARTICLE
     div.generate
 	    = form_with model: @article, local: true do |f|
@@ -13,5 +7,8 @@ div.main__container__wrapper
 		        = f.text_field :title, class: "generate__title"
 	        = f.label :text, "テキスト"
 	        = f.rich_text_area :text
+            = f.label :category_id, "カテゴリー"
+            - @all = Category.all.map { |category| [category.id] }
+	        = f.select :category_id, @all
 	        = f.submit
 	= link_to "back", articles_path

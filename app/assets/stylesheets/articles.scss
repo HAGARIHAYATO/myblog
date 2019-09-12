@@ -49,32 +49,6 @@
 	text-align: center;
 }
 
-.articles{
- 	display: flex;
- 	flex-flow: row-reverse wrap-reverse;
- 	justify-content: center;
- 	width: 100%;
-}
-
-.articles__title{
-	text-align: center;
-	line-height: 100px;
-	font-size: 24px;
-	font-weight: bold;
-}
-
-.articles__box{
-	width: 35%;
-	margin: 1% 1%;
-	border-radius: 5px;
-	box-shadow: 0 1px 3px lighten(grey, 10%);
-	transition: all .3s;
-	&:hover{
-	    transform: scale(1.07);
-	    transition: all .3s;
-	}
-}
-
 .mainbar__title{
 	line-height: 100px;
 	text-align: center;
