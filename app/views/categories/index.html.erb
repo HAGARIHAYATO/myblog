@@ -1,6 +1,7 @@
+<h3 class="articles__title">CATEGORY</h3>
 <div class="category">
 	<div class="category__list">
-		    <table>
+		    <table class="table">
 		    	<thead>
 		    		<tr>
 		    			<th>Category_Name</th>
@@ -23,9 +24,9 @@
 	</div>
 	<div class="category__add">
 		<h3>ADD CATEGORY</h3>
-		<%= form_with model: @addCategory, local: false do |f| %>
+		<%= form_with model: @addCategory, local: true do |f| %>
 		    <%= f.label :name ,'Category_Name'%>
-		    <%= f.text_area :name %>
+		    <%= f.text_field :name %>
 		    <%= f.submit %>
 		<% end %>
 	</div>

@@ -13,8 +13,11 @@
  *= require_tree .
  *= require_self
  */
+ // Custom bootstrap variables must be set or imported *before* bootstrap.
+ @import "bootstrap";
 
  *{
+ 	text-decoration: none;
  	margin: 0;
  	padding: 0;
  	box-sizing: border-box;
@@ -60,6 +63,9 @@
  	font-weight: bold;
  	text-decoration: none;
  	color: black;
+ 	&:hover{
+ 		text-decoration: none;
+ 	}
  }
 
  .box{
@@ -82,7 +88,7 @@
 
  .articles{
  	display: flex;
- 	flex-flow: row-reverse wrap-reverse;
+ 	flex-flow: row wrap;
  	justify-content: center;
  	width: 100%;
 }
@@ -104,6 +110,28 @@
 	    transform: scale(1.07);
 	    transition: all .3s;
 	}
+}
+
+.mainbar__title{
+	line-height: 100px;
+	text-align: center;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+.mainbar__meta{
+	color: grey;
+	text-align: right;
+	line-height: 24px;
+	font-size: 12px;
+	width: 90%;
+	margin-right: 10%;
+	margin-bottom: 0;
+}
+
+.pagination{
+	justify-content: center;
+	margin: 30px 0;
 }
 
 

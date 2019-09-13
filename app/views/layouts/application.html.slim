@@ -11,11 +11,21 @@ html(lang="en")
         div.header__pict
           p.header__pict__text CAN WEAR ANYTHING
       nav.header__nav
-        div.box
-          = link_to 'All', articles_path, class: "header__nav__link"
-        - Category.all.each do |category|
+        - if user_signed_in?
           div.box
-            = link_to category.name,category_path(category), class: "header__nav__link"
+            = link_to 'Admin', admin_path, class: "header__nav__link"
+          div.box
+            = link_to 'Category', categories_path, class: "header__nav__link"
+          div.box
+            = link_to 'Log-out' , destroy_user_session_path, method: :delete, class: "header__nav__link"
+          div.box
+            = link_to 'All', articles_path, class: "header__nav__link"
+        - else
+          div.box
+            = link_to 'All', articles_path, class: "header__nav__link"
+          - Category.all.each do |category|
+            div.box
+              = link_to category.name,category_path(category), class: "header__nav__link"
       div.main__container
         - if flash[:notice]
           div.flash

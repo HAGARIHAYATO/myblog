@@ -1,0 +1,8 @@
+en:
+  views:
+    pagination:
+      first: "&laquo; FIRST"
+      last: "LAST &raquo;"
+      previous: "&lsaquo; PREV"
+      next: "NEXT &rsaquo;"
+      truncate: "..."

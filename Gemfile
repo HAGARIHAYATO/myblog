@@ -61,8 +61,6 @@ gem 'kaminari', '~> 1.1.1'
 
 gem 'meta-tags'
 
-gem 'acts-as-taggable-on'
-
 gem 'slim-rails'
 
 gem 'html2slim'
@@ -71,4 +69,9 @@ gem 'pry-byebug'
 
 gem 'friendly_id'
 
+gem 'bootstrap'
+
+gem 'jquery-rails'
+
+gem 'kaminari-bootstrap'
 

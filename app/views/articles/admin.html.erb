@@ -1,0 +1,28 @@
+<h3 class="articles__title">ADMIN</h3>
+<div class="admin">
+	<h4>ALL ARTICLE</h4>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Created-at</th>
+				<th>Title</th>
+				<th></th>
+				<th>Edit-Category</th>
+			</tr>
+		</thead>
+		<tbody class="admin__article">
+			<% Article.all.each do |article| %>
+			<tr>
+				<td><%= article.created_at.strftime("%Y-%m-%d") %></td>
+				<td><%= link_to article.title, edit_article_path(article) %></td>
+			    <td><%= link_to "Destroy", article_path(article), method: :delete %></td>
+			    <td><%= link_to article.category.name, edit_category_path(article.category) %></td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+	<%= paginate @articles, class: "pagination paginate" %>
+	<p>
+		<%= link_to 'ADD_ARTICLE' , new_article_path, class: "admin__links" %>
+	</p>
+</div>

@@ -1,6 +1,13 @@
 class ArticlesController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
+
+
+  def admin
+    @articles = Article.includes(:category).page(params[:page]).reverse_order.per(10)
+  end
+  
   def index
-    @articles = Article.includes(:category).page(params[:page]).per(8)
+    @articles = Article.includes(:category).page(params[:page]).reverse_order.per(6)
   end
 
   def new
