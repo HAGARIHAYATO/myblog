@@ -2,7 +2,7 @@ module ApplicationHelper
 	def default_meta_tags
     {
       site: 'Myblog',
-      title: '.hagk',
+      title: 'Blog88to',
       reverse: true,
       charset: 'utf-8',
       description: '元自衛官　葉狩勇人のブログです。　javascript, React, Rails等について投稿します。',
