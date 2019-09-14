@@ -1,10 +1,59 @@
 <div class="main__container__flex">
 	<div class="mainbar">
-		<h4 class="mainbar__title"><%= @article.title %></h4>
-		<p class="mainbar__meta"><%= link_to @article.category.name, category_path(@article.category) %></p>
-		<p class="mainbar__meta"><%= @article.created_at.strftime("%Y-%m-%d") %></p>
-		<%= @article.text %>
-		<%= link_to 'TOP', root_path %>
+		<div class="mainbar__article">
+			<h4 class="mainbar__title"><span class="mainbar__title__marker"><%= @article.title %></span></h4>
+			<p class="mainbar__meta"><%= link_to @article.category.name, category_path(@article.category) %></p>
+			<p class="mainbar__meta"><%= @article.created_at.strftime("%Y-%m-%d") %></p>
+			<%= @article.text %>
+		</div>
+		<div class="comment">
+			<% if flash[:success] %>
+			    <div class="flash">
+			    	<%= flash[:success] %>
+			    </div>
+			<% end %>
+		    <!-- コメント入力欄をブログの詳細ページに表示するためのrender -->
+		    <h4 class="comment__head">コメントはこちらから</h4>
+		    <div>
+			    <%= render partial: 'comments/form', locals: { comment: @comment, article: @article } %>
+		    </div>
+		    <h4 class="comment__head">コメント一覧</h4>
+		    <div id="comments_area">
+		      <!-- 投稿されたコメント一覧をブログの詳細ページに表示するためのrender -->
+		      <%= render partial: 'comments/index', locals: { comments: @comments } %>
+		    </div>
+		</div>
+		<%= link_to 'TOP', root_path , class: "mainbar__link"%>
 	</div>
-	<%= render 'articles/sidebar' %>
+	<div class="sidebar">
+		<div class="sidebar__wrapper">
+			<div class="sidebar__content">
+			    <h4><span class="sidebar__marker">この記事について</span></h4>
+			</div>
+			<div class="sidebar__content">
+				<h5>目次</h5>
+				<div class="index">
+				</div>
+				<div class="sidebar__content__items">
+					<div class="sidebar__content__item">
+					    <h5>コメント</h5>
+					    <p><%= link_to @article.comments.count, '#comments_area' %>件</p>
+					</div>
+					<div class="sidebar__content__item">
+					    <h5>カテゴリー</h5>
+					    <p><%= link_to @article.category.name, category_path(@article.category) %></p>
+				    </div>
+				</div>
+			</div>
+			<div class="sidebar__content">
+				<h5>管理人詳細</h5>
+				<%= link_to 'https://hagarihayato.github.io/jsPortFolio/dest/' do%>
+					<div class="sidebar__content__link">
+					    <div class="author_pict"></div>
+					    <p>葉狩勇人</p>
+					</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
 </div>

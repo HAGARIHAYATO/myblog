@@ -1,12 +1,14 @@
-<%= form_with model: @category, local: true do |f| %>
-    <p>
-    	<%= f.label :name ,'Category_Name'%>
-    </p>
-    <p>
-	    <%= f.text_field :name %>
-    </p>
-    <p>
-	    <%= f.submit %>
-    </p>
-<% end %>
-<%= link_to 'back', categories_path %>
+<div class="main__container__wrapper">
+	<%= form_with model: @category, local: true do |f| %>
+	    <p>
+	    	<%= f.label :name ,'Category_Name'%>
+	    </p>
+	    <p>
+		    <%= f.text_field :name %>
+	    </p>
+	    <p>
+		    <%= f.submit %>
+	    </p>
+	<% end %>
+	<%= link_to 'back', categories_path %>
+</div>

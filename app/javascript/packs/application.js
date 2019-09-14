@@ -21,3 +21,31 @@ require("@rails/actiontext")
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+
+const targetText = document.querySelectorAll(".trix-content h1");
+console.log(targetText);
+const textList = document.querySelector(".index");
+document.addEventListener('DOMContentLoaded', ()=>{
+	const div = document.createElement('div');
+	//#######check#######
+    targetText.forEach((value,i)=>{
+    	let id = value.id;
+    	if(id === ''){
+    		id = value.textContent + i;
+    		value.id = id;
+    	}
+
+    	if(value.tagName === 'H1'){
+    		const ul = document.createElement('ul');
+    		const li = document.createElement('li');
+    		const a = document.createElement('a');
+
+    		a.innerHTML = value.textContent;
+    		a.href = '#' + value.id;
+    		li.appendChild(a);
+    		ul.appendChild(li);
+    		div.appendChild(ul);
+    	}
+    });
+    textList.appendChild(div);
+});

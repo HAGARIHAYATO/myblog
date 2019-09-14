@@ -1,15 +1,15 @@
 current directory: /vagrant/myblog/vendor/bundle/ruby/2.6.0/gems/sassc-2.2.0/ext
-/home/vagrant/.rbenv/versions/2.6.3/bin/ruby -I /home/vagrant/.rbenv/versions/2.6.3/lib/ruby/2.6.0 -r ./siteconf20190912-3196-rd5hn9.rb extconf.rb
+/home/vagrant/.rbenv/versions/2.6.3/bin/ruby -I /home/vagrant/.rbenv/versions/2.6.3/lib/ruby/2.6.0 -r ./siteconf20190913-9920-jaalkm.rb extconf.rb
 creating Makefile
 
 current directory: /vagrant/myblog/vendor/bundle/ruby/2.6.0/gems/sassc-2.2.0/ext
 make "DESTDIR=" clean
-make: Warning: File 'Makefile' has modification time 0.19 s in the future
+make: Warning: File 'Makefile' has modification time 443 s in the future
 make: warning:  Clock skew detected.  Your build may be incomplete.
 
 current directory: /vagrant/myblog/vendor/bundle/ruby/2.6.0/gems/sassc-2.2.0/ext
 make "DESTDIR="
-make: Warning: File 'Makefile' has modification time 0.17 s in the future
+make: Warning: File 'Makefile' has modification time 443 s in the future
 compiling ./libsass/src/units.cpp
 compiling ./libsass/src/fn_miscs.cpp
 compiling ./libsass/src/util.cpp
@@ -76,4 +76,6 @@ make: warning:  Clock skew detected.  Your build may be incomplete.
 
 current directory: /vagrant/myblog/vendor/bundle/ruby/2.6.0/gems/sassc-2.2.0/ext
 make "DESTDIR=" install
-/usr/bin/install -c -m 0755 libsass.so ./.gem.20190912-3196-dqw8bo/sassc
+make: Warning: File 'Makefile' has modification time 323 s in the future
+/usr/bin/install -c -m 0755 libsass.so ./.gem.20190913-9920-12q7xe8/sassc
+make: warning:  Clock skew detected.  Your build may be incomplete.

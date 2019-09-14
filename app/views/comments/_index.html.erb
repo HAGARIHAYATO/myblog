@@ -1,0 +1,7 @@
+<% comments.each do |comment| %>
+    <div class="comment__items">
+	    <p><span class="comment__items__head">Name</span>  <%= comment.name %></p>
+	    <p class="comment__items__head">Comment</p>
+	    <p class="comment__items__content"><%= comment.content %></p>
+    </div>
+<% end %>

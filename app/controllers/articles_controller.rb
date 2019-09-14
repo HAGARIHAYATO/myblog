@@ -5,9 +5,9 @@ class ArticlesController < ApplicationController
   def admin
     @articles = Article.includes(:category).page(params[:page]).reverse_order.per(10)
   end
-  
+
   def index
-    @articles = Article.includes(:category).page(params[:page]).reverse_order.per(6)
+    @articles = Article.published.includes(:category).page(params[:page]).reverse_order.per(6)
   end
 
   def new
@@ -18,7 +18,7 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
     if @article.save
       flash[:notice] = 'success'
-      redirect_to article_path(@article)
+      redirect_to admin_path
     else
       flash[:notice] = 'error'
       @article = Article.new(article_params)
@@ -27,7 +27,9 @@ class ArticlesController < ApplicationController
   end
 
   def show
-    @article = Article.find(params[:id])
+    @article = Article.published.find(params[:id])
+    @comment = Comment.new
+    @comments = @article.comments
   end
 
   def edit
@@ -38,7 +40,7 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
     if @article.update(article_params)
       flash[:notice] = 'success'
-      redirect_to article_path(@article)
+      redirect_to admin_path
     else
       flash[:notice] = 'error'
       @article = Article.find(params[:id])
@@ -49,11 +51,11 @@ class ArticlesController < ApplicationController
   def destroy
     @article = Article.find(params[:id])
     @article.destroy
-    redirect_to root_path
+    redirect_to admin_path
   end
 
   private
   def article_params
-    params.require(:article).permit(:title, :text, :created_at, :category_id)
+    params.require(:article).permit(:title, :text, :created_at, :category_id, :status)
   end
 end

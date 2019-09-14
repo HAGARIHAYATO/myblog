@@ -12,5 +12,7 @@ div.main__container__wrapper
 	        p
 	            = f.select :category_id, @all, {prompt:"Category"}, {required: 'true', autofocus: 'true', class: 'dropdown'}
 	        p
+	            = f.select :status, Article.statuses.keys, class: 'dropdown'
+	        p
 	            = f.submit
 	= link_to "back", articles_path

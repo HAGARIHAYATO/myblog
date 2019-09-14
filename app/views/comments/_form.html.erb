@@ -1,0 +1,13 @@
+<%= form_with(model: [article, comment] ) do |form| %>
+  <div>
+  	<%= label :name, 'お名前' %>
+    <%= form.text_field :name %>
+  </div>
+  <div>
+  	<%= label :content, 'コメント' %>
+    <%= form.rich_text_area :content %>
+  </div>
+  <div class="actions">
+    <%= form.submit "送信" %>
+  </div>
+<% end %>

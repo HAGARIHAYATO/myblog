@@ -1,11 +1,15 @@
-<h3 class="articles__title"><%= @category.name.upcase %> ARTICLES</h3>
-<div class="articles">
-	<% @category.articles.each do |article| %>
-	    <div class="articles__box">
-			<%= link_to article_path(article), class: "subTitle" do %>
-				<p class="mainbar__title"><%= article.title %></p>
-				<p class="mainbar__meta"><%= article.created_at.strftime("%Y-%m-%d") %></p>
-			<% end %>
-	    </div>
-	<% end %>
+<div class="main__container__wrapper">
+	<h3 class="articles__title"><span class="title__marker"><%= @category.name.upcase %> ARTICLES</span></h3>
+	<div class="articles">
+		<% @category.articles.reverse_order.each do |article| %>
+		    <div class="articles__box">
+				<%= link_to article_path(article), class: "subTitle" do %>
+					<p class="mainbar__title"><span class="mainbar__title__marker"><%= article.title %></span></p>
+					<p class="mainbar__meta"><%= article.category.name %></p>
+					<p class="mainbar__meta">コメント<%= article.comments.count %>件</p>
+					<p class="mainbar__meta"><%= article.created_at.strftime("%Y-%m-%d") %></p>
+				<% end %>
+		    </div>
+		<% end %>
+	</div>
 </div>

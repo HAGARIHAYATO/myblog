@@ -1,0 +1,15 @@
+current directory: /Users/hagarihayato/Desktop/work/vagrant/myblog/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+/Users/hagarihayato/.rbenv/versions/2.6.3/bin/ruby -I /Users/hagarihayato/.rbenv/versions/2.6.3/lib/ruby/2.6.0 -r ./siteconf20190913-5802-11j1pwn.rb extconf.rb
+creating Makefile
+
+current directory: /Users/hagarihayato/Desktop/work/vagrant/myblog/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" clean
+
+current directory: /Users/hagarihayato/Desktop/work/vagrant/myblog/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR="
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.bundle
+
+current directory: /Users/hagarihayato/Desktop/work/vagrant/myblog/vendor/bundle/ruby/2.6.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cruby.bundle ./.gem.20190913-5802-okwhws/skiptrace/internal

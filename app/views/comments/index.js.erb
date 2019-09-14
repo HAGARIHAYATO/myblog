@@ -1,0 +1,8 @@
+const cArea = document.querySelector("#comments_area");
+const tArea = document.querySelector("textarea");
+function createComment(){
+	cArea.textContent += <%= j(render 'index', { comments: @comment.article.comments }) %>;
+	tArea.value = "";
+}
+
+createComment();
