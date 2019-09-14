@@ -81,6 +81,10 @@
  	font-family: 'Optima', sans-serif;
  }
 
+ .header__pict__text__sub{
+ 	display: none;
+ }
+
  .header__nav{
     // background-color: white;
  	width: 100%;
@@ -128,6 +132,7 @@
  }
 
  .main__container__flex{
+ 	word-wrap: break-word;
 	display: flex;
 	width: 100%;
 	position: relative;
@@ -186,6 +191,7 @@
 	font-size: 24px;
 	font-weight: bold;
 	font-family: 'Optima', sans-serif;
+	word-wrap: break-word;
 }
 
 .mainbar__title__marker{
@@ -313,13 +319,75 @@
 }
 
 
- .footer__text{
+.footer__text{
  	text-align: center;
  	font-weight: bold;
  	line-height: 70px;
  	width: 100%;
  	height: 70px;
  	margin-bottom: 0;
- }
+}
+
+@media screen and (max-width: 760px){
+
+    .header{
+    	height: 400px;
+    }
+
+    .header__pict{
+    	height: 400px;
+    	background-image: url("star.png");
+    	background-size: cover;
+    	background-position: center;
+    	background-repeat: no-repeat;
+    }
+
+    .header__pict__text{
+    	display: none;
+    }
+
+    .header__pict__text__sub{
+    	display: block;
+    	font-size: 36px;
+    	color: #FFF;
+    	text-align: center;
+    	line-height: 400px;
+    }
+
+	.main__container__flex{
+		display: block;
+	}
+
+	.mainbar{
+		width: 90%;
+		margin: 10px auto;
+	}
+    
+    .articles__box{
+    	width: 90%;
+    	margin-bottom: 20px;
+    }
+
+	trix-toolbar{
+		display: none;
+	}
+
+	.comment{
+		transform: scale(1.05);
+	}
+
+	.sidebar{
+		width: 90%;
+		margin: 10px auto;
+	}
+
+ 	.sidebar__content__items:nth-child(1){
+		display: none;
+ 	}
+
+ 	.sidebar__content:nth-child(1){
+	    display: none;
+ 	}
+}
 
 
