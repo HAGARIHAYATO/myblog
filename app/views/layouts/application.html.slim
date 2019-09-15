@@ -1,7 +1,7 @@
 doctype html
 html(lang="en")
   head
-    title Myblog
+    title HAGALOG
     = csrf_meta_tags
     = csp_meta_tag
     meta name="viewport" content="width=device-width, initial-scale=1.0"
@@ -11,8 +11,10 @@ html(lang="en")
     main.main
       header.header
         div.header__pict
-          p.header__pict__text Blog88to
-          p.header__pict__text__sub Blog88to
+          p.header__pict__text
+            | HAG
+            span A
+            | LOG
       nav.header__nav
         - if user_signed_in?
           div.box

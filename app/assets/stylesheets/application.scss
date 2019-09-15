@@ -65,7 +65,7 @@
  }
 
  .header__pict{
- 	// background-color: pink;
+ 	background-color: grey;
  	width: 100%;
  	height: 200px;
  	background-repeat: no-repeat;
@@ -79,20 +79,24 @@
  	font-weight: bold;
  	font-size: 42px;
  	font-family: 'Optima', sans-serif;
- }
-
- .header__pict__text__sub{
- 	display: none;
+ 	color: white;
+ 	& span{
+		display: inline-block;
+        transform: scale(1.2) rotate(15deg);
+        margin-right: 20px;
+        margin-left: 20px;
+        color: darken(tomato,15%);
+    }
  }
 
  .header__nav{
-    // background-color: white;
+    background-color: lighten(grey, 25%);
  	width: 100%;
  	height: 50px;
  	display: flex;
  	justify-content: center;
- 	border-top: 1px solid grey;
- 	border-bottom: 1px solid grey;
+ 	// border-top: 1px solid grey;
+ 	// border-bottom: 1px solid grey;
  }
 
  .header__nav__link{
@@ -343,15 +347,14 @@
     }
 
     .header__pict__text{
-    	display: none;
-    }
-
-    .header__pict__text__sub{
     	display: block;
     	font-size: 36px;
-    	color: #FFF;
     	text-align: center;
     	line-height: 400px;
+    	color: #FFF;
+    	& span{
+    		color: darken(tomato,10%);
+    	}
     }
 
 	.main__container__flex{
