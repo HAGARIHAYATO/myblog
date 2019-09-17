@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'articles#index'
   get '/admin' => 'articles#admin'
+  get '/search' => 'articles#search'
   devise_for :users
   resources :users
   resources :categories
