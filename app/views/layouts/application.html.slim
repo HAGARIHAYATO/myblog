@@ -36,7 +36,7 @@ html(lang="en")
         div.search__field
           = form_tag search_path,:method => 'get' do
             = text_field_tag :search
-            = submit_tag 'Search', :title => nil
+            = submit_tag ' 検索 ', class: "search__field__submit", :title => nil
       div.main__container
         - if flash[:notice]
           div.flash
