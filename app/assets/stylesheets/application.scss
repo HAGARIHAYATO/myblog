@@ -41,6 +41,30 @@
     background-color: white;
  }
 
+ .trix-content{
+ 	& pre{
+ 		background-color: rgba(30, 30, 30, 0.8);
+ 		border-radius: 5px;
+ 		line-height: 1.5em;
+ 		padding: 1.5% 2%;
+ 		margin: 1% 0;
+ 		color: white;
+ 	}
+    & blockquote{
+ 		border-left: 0.3em solid tomato;
+ 		border-right: 0.3em solid tomato;
+    	background-color: #ccc;
+    }
+	& h1{
+	 	line-height: 2em;
+	 	// border-radius: 10px;
+	 	border-left: 10px solid skyblue;
+	 	border-bottom: 1px dotted grey;
+	 	padding: 0 4%;
+	 	margin: 5% 0;
+	}
+ }
+
  .index{
     // transform: scale(0.8);
     font-size: 14px;
@@ -109,7 +133,7 @@
  	& input{
 		height: 30px;
         width: 200px;
- 		margin-right: 5px;
+ 		margin-right: 7px;
  		box-shadow: 0 1px 3px black;
  		border-radius: 5px;
  	}
@@ -118,7 +142,12 @@
  		border-radius: 5px;
  		font-size: 18px;
  		&:hover{
- 			opacity: 0.7;
+ 			transform: scale(1.1);
+ 			transition: all .3s;
+ 			& .fa-search{
+ 				color: tomato;
+                transition: all .3s;
+ 			}
  		}
  	}
  }
@@ -363,6 +392,7 @@
  	width: 100%;
  	height: 70px;
  	margin-bottom: 0;
+ 	color: tomato;
 }
 
 @media screen and (max-width: 760px){
