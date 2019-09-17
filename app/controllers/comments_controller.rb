@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
 	    @article = Article.find(params[:article_id])
 	    @comment = @article.comments.build(comment_params)
 	    if @comment.save
-	        render :index
+	        redirect_to article_path(@comment.article)
 	        flash[:success] = "Comment Create!"
 	    end
 	end
