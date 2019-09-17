@@ -7,6 +7,7 @@ html(lang="en")
     meta name="viewport" content="width=device-width, initial-scale=1.0"
     meta name="google-site-verification" content="Co_NKD61n0wLkAFaZgDLuoCMe8THVhlY8iUG0CvSnrQ"
     = display_meta_tags(default_meta_tags)
+    link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous"
     = stylesheet_link_tag('application', 'data-turbolinks-track': 'reload')
   body
     main.main
@@ -36,7 +37,10 @@ html(lang="en")
         div.search__field
           = form_tag search_path,:method => 'get' do
             = text_field_tag :search
-            = submit_tag ' 検索 ', class: "search__field__submit", :title => nil
+            = button_tag type: 'submit', class: "search__field__submit", :title => nil do
+              | &nbsp;&nbsp;
+              i.fas.fa-search
+              | &nbsp;&nbsp;
       div.main__container
         - if flash[:notice]
           div.flash

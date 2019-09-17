@@ -85,3 +85,5 @@ gem 'sitemap_generator'
 gem 'whenever', :require => false
 
 gem 'roboto'
+
+gem "font-awesome-sass"

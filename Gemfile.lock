@@ -93,6 +93,8 @@ GEM
     erubi (1.8.0)
     execjs (2.7.0)
     ffi (1.11.1)
+    font-awesome-sass (5.9.0)
+      sassc (>= 1.11)
     friendly_id (5.2.5)
       activerecord (>= 4.0.0)
     globalid (0.4.2)
@@ -287,6 +289,7 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   devise
+  font-awesome-sass
   friendly_id
   html2slim
   image_processing
