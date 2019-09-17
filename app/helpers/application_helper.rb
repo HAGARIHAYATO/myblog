@@ -1,31 +1,34 @@
 module ApplicationHelper
-	def default_meta_tags
+  def default_meta_tags
     {
-      site: 'Myblog',
-      title: 'Blog88to',
+      site: 'HAGALOG',
+      title: 'HAGALOG',
       reverse: true,
       charset: 'utf-8',
       description: '元自衛官　葉狩勇人のブログです。　javascript, React, Rails等について投稿します。',
+      separator: '|',
       keywords: 'programming',
       canonical: request.original_url,
-      separator: '|',
-      icon: [
-        { href: image_url('favicon.ico') },
-        { href: image_url('icon.jpg'), rel: 'apple-touch-icon', sizes: '180x180', type: 'image/jpg' },
-      ],
-      og: {
-        site_name: :site, # もしくは site_name: :site
-        title: :title, # もしくは title: :title
-        description: :description, # もしくは description: :description
-        type: 'website',
-        url: request.original_url,
-        image: image_url('ogp.png'),
-        locale: 'ja_JP',
-      },
-      twitter: {
-        card: 'summary',
-        site: '@Hagari06',
-      }
+      og: defalut_og,
+      twitter: default_twitter_card
+    }
+  end
+
+  private
+
+  def defalut_og
+    {
+      title: :full_title,          # :full_title とすると、サイトに表示される <title> と全く同じものを表示できる
+      description: :description,   # 上に同じ
+      url: request.url,
+      image: 'https://example.com/hoge.png'
+    }
+  end
+
+  def default_twitter_card
+    {
+      card: 'summary_large_image', # または summary
+      site: '@hogehoge'            # twitter ID
     }
   end
 end

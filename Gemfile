@@ -79,3 +79,9 @@ gem 'kaminari-bootstrap'
 group :production do
   gem 'pg'
 end
+
+gem 'sitemap_generator'
+
+gem 'whenever', :require => false
+
+gem 'roboto'
