@@ -6,9 +6,7 @@
 				<%= link_to article_path(article), class: "subTitle" do %>
 					<p class="mainbar__title"><span class="mainbar__title__marker"><%= article.title %></span></p>
 					<p class="mainbar__description"><%= article.description %></p>
-					<% if article.category.name.any? %>
-					    <p class="mainbar__meta"><%= article.category.name %></p>
-					<% end %>
+					<p class="mainbar__meta"><%= article.category.name %></p>
 					<p class="mainbar__meta">コメント<%= article.comments.count %>件</p>
 					<p class="mainbar__meta"><%= article.created_at.strftime("%Y-%m-%d") %></p>
 				<% end %>
