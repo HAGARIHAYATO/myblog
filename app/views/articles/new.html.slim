@@ -7,6 +7,10 @@ div.main__container__wrapper
 		        = f.text_field :title, class: "generate__title"
 	        = f.label :text, "テキスト"
 	        = f.rich_text_area :text
+	        p
+	            = f.label :description, "説明"
+	        p
+	            = f.text_area :description
             = f.label :category_id, "カテゴリー"
             - @all = Category.order(:id).map { |category| [category.name, category.id] }
 	        p

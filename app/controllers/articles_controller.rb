@@ -1,5 +1,12 @@
 class ArticlesController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show, :search]
+  before_action :authenticate_user!, except: [:index, :show, :search, :about, :archive]
+  
+  def about
+  end
+
+  def archive
+    @articles = Article.published
+  end
 
   def search
     @articles = Article.published.includes(:category).page(params[:page]).reverse_order.per(6).search(params[:search])
@@ -10,7 +17,7 @@ class ArticlesController < ApplicationController
   end
 
   def index
-    @articles = Article.published.includes(:category).page(params[:page]).reverse_order.per(6).search(params[:search])
+    @articles = Article.published.includes(:category).page(params[:page]).reverse_order.per(6)
   end
 
   def new
@@ -59,6 +66,6 @@ class ArticlesController < ApplicationController
 
   private
   def article_params
-    params.require(:article).permit(:title, :text, :created_at, :category_id, :status)
+    params.require(:article).permit(:title, :text, :created_at, :category_id, :status, :description)
   end
 end

@@ -1,7 +1,7 @@
 <div class="main__container__wrapper">
 	<h3 class="articles__title"><span class="title__marker"><%= @category.name.upcase %> ARTICLES</span></h3>
 	<div class="articles">
-		<% @category.articles.reverse_order.each do |article| %>
+		<% @articles.each do |article| %>
 		    <div class="articles__box">
 				<%= link_to article_path(article), class: "subTitle" do %>
 					<p class="mainbar__title"><span class="mainbar__title__marker"><%= article.title %></span></p>
@@ -12,4 +12,5 @@
 		    </div>
 		<% end %>
 	</div>
+	<%= paginate @articles, class: "pagination paginate" %>
 </div>

@@ -23,8 +23,14 @@ require("@rails/actiontext")
 //= require bootstrap-sprockets
 
 const targetText = document.querySelectorAll(".trix-content h1");
-console.log(targetText);
 const textList = document.querySelector(".index");
+const toggle1 = document.querySelector(".drop1");
+const toggle2 = document.querySelector(".drop2");
+const box1 = document.querySelector(".drop1__box");
+const box2 = document.querySelector(".drop2__box");
+let num1 = 0;
+let num2 = 0;
+//目次
 document.addEventListener('DOMContentLoaded', ()=>{
 	const div = document.createElement('div');
 	//#######check#######
@@ -49,3 +55,33 @@ document.addEventListener('DOMContentLoaded', ()=>{
     });
     textList.appendChild(div);
 });
+//ドロップダウンメニュー
+toggle1.addEventListener('click',()=>{
+    num1++;
+    if(num1%2 !== 0){
+        box1.style.display="block";
+        box2.style.display="none";
+        num2 = 0;
+    }else{
+        num1 = 0;
+        box1.style.display="none";
+    }
+});
+
+toggle2.addEventListener('click',()=>{
+    num2++;
+    if(num2%2 !== 0){
+        box2.style.display="block";
+        box1.style.display="none";
+        num1 = 0;
+    }else{
+        num2 = 0;
+        box2.style.display="none";
+    }
+});
+
+
+
+
+
+

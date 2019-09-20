@@ -6,6 +6,7 @@
 			    	<thead>
 			    		<tr>
 			    			<th>Category_Name</th>
+			    			<th>Category_Status</th>
 			    			<th></th>
 			    		</tr>
 			    	</thead>
@@ -14,6 +15,9 @@
 			    		<tr>
 			    			<td>
 							    <%= link_to category.name, edit_category_path(category) %>
+			    			</td>
+			    			<td>
+			    				<%= category.category_status %>
 			    			</td>
 			    			<td>
 			    				<%= link_to 'destroy', category_path(category), method: :delete %>
@@ -26,8 +30,14 @@
 		<div class="category__add">
 			<h3>ADD CATEGORY</h3>
 			<%= form_with model: @addCategory, local: true do |f| %>
-			    <%= f.label :name ,'Category_Name'%>
-			    <%= f.text_field :name %>
+			    <p>
+				    <%= f.label :name ,'Category_Name'%>
+				    <%= f.text_field :name %>
+			    </p>
+			    <p>
+				    <%= f.label :category_status ,'Category_status'%>
+				    <%= f.select :category_status, Category.category_statuses.keys, class: 'dropdown'%>
+			    </p>
 			    <%= f.submit %>
 			<% end %>
 		</div>

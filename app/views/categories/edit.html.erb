@@ -7,6 +7,10 @@
 		    <%= f.text_field :name %>
 	    </p>
 	    <p>
+		    <%= f.label :category_status ,'Category_status'%>
+		    <%= f.select :category_status, Category.category_statuses.keys, class: 'dropdown'%>
+	    </p>
+	    <p>
 		    <%= f.submit %>
 	    </p>
 	<% end %>

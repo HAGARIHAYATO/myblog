@@ -8,6 +8,7 @@ class CategoriesController < ApplicationController
 
   def show
   	@category = Category.friendly.find(params[:id])
+    @articles = @category.articles.page(params[:page]).reverse_order.per(6)
   	# @articles = @category.articles.includes(:category).page(params[:page]).per(8)
   end
 
@@ -50,6 +51,6 @@ class CategoriesController < ApplicationController
 
   private
   def category_params
-  	params.require(:category).permit(:name)
+  	params.require(:category).permit(:name, :category_status)
   end
 end

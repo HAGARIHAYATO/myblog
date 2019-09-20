@@ -9,6 +9,7 @@ html(lang="en")
     = display_meta_tags(default_meta_tags)
     link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous"
     = stylesheet_link_tag('application', 'data-turbolinks-track': 'reload')
+    = favicon_link_tag('favicon.ico')
   body
     main.main
       header.header
@@ -17,35 +18,49 @@ html(lang="en")
             | HAG
             span A
             | LOG
-      nav.header__nav
-        - if user_signed_in?
-          div.box
-            = link_to 'Admin', admin_path, class: "header__nav__link"
-          div.box
-            = link_to 'Category', categories_path, class: "header__nav__link"
-          div.box
-            = link_to 'Log-out' , destroy_user_session_path, method: :delete, class: "header__nav__link"
-          div.box
+      div.header__nav__wrapper
+        nav.header__nav
+          button.box
             = link_to 'All', articles_path, class: "header__nav__link"
-        - else
-          div.box
-            = link_to 'All', articles_path, class: "header__nav__link"
-          - Category.all.each do |category|
-            div.box
-              = link_to category.name,category_path(category), class: "header__nav__link"
-      div.search
-        div.search__field
-          = form_tag search_path,:method => 'get' do
-            = text_field_tag :search
-            = button_tag type: 'submit', class: "search__field__submit", :title => nil do
-              | &nbsp;&nbsp;
-              i.fas.fa-search
-              | &nbsp;&nbsp;
+          - if user_signed_in?
+            button.box
+              = link_to 'Admin', admin_path, class: "header__nav__link"
+            button.box
+              = link_to 'Category', categories_path, class: "header__nav__link"
+            button.box
+              = link_to 'Log-out' , destroy_user_session_path, method: :delete, class: "header__nav__link"
+          - else
+            button.dropdown__container.box.drop1
+              | Code &nbsp;&nbsp; ▼
+              div.dropdown.dropdown__box.drop1__box
+                - Category.code.each do |category|
+                  = link_to category_path(category), class: "dropdown__item__text" do
+                    div.dropdown__item
+                      = category.name
+            button.dropdown__container.box.drop2
+              | Life &nbsp;&nbsp; ▼
+              div.dropdown.dropdown__box.drop2__box
+                - Category.life.each do |category|
+                  = link_to category_path(category), class: "dropdown__item__text" do
+                    div.dropdown__item
+                      = category.name
+            button.box
+              = link_to 'About', about_path, class: "header__nav__link"
+        div.search
+          div.search__field
+            = form_with url: search_path,local: true,method: :get do
+              = text_field_tag :search
+              = button_tag type: 'submit', class: "search__field__submit", title: :nil do
+                | &nbsp;&nbsp;
+                i.fas.fa-search
+                | &nbsp;&nbsp;
       div.main__container
         - if flash[:notice]
           div.flash
             = flash[:notice]
         = yield
+      div.main__container
+        div.archives
       footer.footer
         p.footer__text &copy; blog.inc
     = javascript_pack_tag('application', 'data-turbolinks-track': 'reload')

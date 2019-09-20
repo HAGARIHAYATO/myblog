@@ -1,11 +1,17 @@
+<% set_meta_tags title: @article.title, description: @article.description, og: { title: @article.title, type: 'article' } %>
 <div class="main__container__flex">
 	<div class="mainbar">
-		<div class="mainbar__article">
+		<section class="mainbar__article">
 			<h4 class="mainbar__title"><span class="mainbar__title__marker"><%= @article.title %></span></h4>
 			<p class="mainbar__meta"><%= link_to @article.category.name, category_path(@article.category) %></p>
+			<p class="mainbar__meta">
+				<%= link_to '#comments_area' do %>
+					Comments <%= @article.comments.count %>件
+			    <% end %>
+			</p>
 			<p class="mainbar__meta"><%= @article.created_at.strftime("%Y-%m-%d") %></p>
 			<%= @article.text %>
-		</div>
+		</section>
 		<div class="comment">
 			<% if flash[:success] %>
 			    <div class="flash">
@@ -28,33 +34,46 @@
 	<div class="sidebar">
 		<div class="sidebar__wrapper">
 			<div class="sidebar__content">
-			    <h4><span class="sidebar__marker">この記事について</span></h4>
+				<%= link_to 'https://hagarihayato.github.io/jsPortFolio/dest/' do%>
+					<div class="sidebar__content__link">
+					    <div class="author_pict"></div>
+					    <p>葉狩勇人</p>
+					</div>
+					<div class="intro">
+						<p class="intro__text">
+							高校卒業後 ▶
+							辻調理師専門学校(調理師免許取得) ▶
+							学費を返すため陸上自衛隊5年間勤務 ▶
+							専修大学会計学科にスカラシップ特待生として
+							現在在学中...<br>
+							個人ではjavascript(ES6),React.js<br>
+							インターン先でRuby,Ruby on Rails<br>
+							1994年生まれ。北海道苫小牧市育ち
+					    </p>
+					    <%= link_to '>>詳細ページ', about_path %>
+					</div>
+				<% end %>
 			</div>
+		</div>
+		<div class="sidebar__wrapper">
+			<div class="sidebar__content">
+				<h5>カテゴリー</h5>
+				<div class="sidebar__content__categories">
+					<% Category.all.each do |category| %>
+					    <%= link_to category_path(category), class: "link_to" do %>
+						    <p class="sidebar__content__categories__links"><%= category.name %> (<%= category.articles.count %>)</p>
+					    <% end %>
+					<% end %>
+				</div>
+			</div>
+		</div>
+		<div class="sidebar__sticky">
 			<div class="sidebar__content">
 				<div class="sidebar__content__items__1">
 					<h5>目次</h5>
 					<div class="index">
 					</div>
 				</div>
-				<div class="sidebar__content__items">
-					<div class="sidebar__content__item">
-					    <h5>コメント</h5>
-					    <p><%= link_to @article.comments.count, '#comments_area' %>件</p>
-					</div>
-					<div class="sidebar__content__item">
-					    <h5>カテゴリー</h5>
-					    <p><%= link_to @article.category.name, category_path(@article.category) %></p>
-				    </div>
-				</div>
-			</div>
-			<div class="sidebar__content">
-				<h5>管理人詳細</h5>
-				<%= link_to 'https://hagarihayato.github.io/jsPortFolio/dest/' do%>
-					<div class="sidebar__content__link">
-					    <div class="author_pict"></div>
-					    <p>葉狩勇人</p>
-					</div>
-				<% end %>
 			</div>
 		</div>
 	</div>
