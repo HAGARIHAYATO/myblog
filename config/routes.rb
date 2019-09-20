@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get '/admin' => 'articles#admin'
   get '/search' => 'articles#search'
   get '/about' => 'articles#about'
-  get 'articles/archive' => 'archive'
+  get 'articles/archive' => 'articles#archive'
   devise_for :users
   resources :users
   resources :categories

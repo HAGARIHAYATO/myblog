@@ -1,11 +1,10 @@
 class ArticlesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show, :search, :about, :archive]
-  
+
   def about
   end
 
   def archive
-    @articles = Article.published
   end
 
   def search
