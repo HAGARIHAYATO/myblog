@@ -10,8 +10,8 @@ User.create!(
   [
     {
       name: 'admin',
-	  email: 'admin@admin',
-	  password: 'adminadmin',
+	    email: 'admin@admin',
+	    password: 'adminadmin',
     },
     {
       name: 'test',
