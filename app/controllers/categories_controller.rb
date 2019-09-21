@@ -41,10 +41,10 @@ class CategoriesController < ApplicationController
   def destroy
   	@category = Category.friendly.find(params[:id])
   	if  @category.destroy
-        flash[:notice] = 'success'
+      flash[:notice] = 'success'
   		redirect_to categories_path
   	else
-        flash[:notice] = 'error'
+      flash[:notice] = 'error'
   		render :index
   	end
   end

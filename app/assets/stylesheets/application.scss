@@ -42,12 +42,35 @@
  	margin-left: 10%;
  }
 
- // .link_to{
- // 	text-decoration: none;
- // 	&:hover{
- // 		text-decoration: none;
- // 	}
- // }
+ .about{
+ 	display: flex;
+ 	justify-content: center;
+ 	width: 100%;
+ 	background-color: white;
+ 	padding: 2%;
+ 	border-radius: 20px;
+ }
+
+ .about__intro{
+ 	margin: 50px 0;
+	width: 30%;
+ }
+
+ .about__author__pict{
+ 	background-image:url("mypict.png");
+ 	width: 100%;
+ 	height: 150px;
+ 	background-position: center;
+ 	background-size: contain;
+ 	margin: 0 auto;
+ 	background-repeat: no-repeat;
+ }
+
+ .about__link{
+ 	text-align: center;
+ 	font-weight: bold;
+ 	color: tomato;
+ }
 
  trix-toolbar {
     position: sticky;
@@ -132,7 +155,6 @@
 
  .header__pict{
  	background-image: url("star.png");
- 	// background-color: grey;
  	background-position: top;
  	background-size: cover;
  	width: 100%;
@@ -169,7 +191,6 @@
     right: 0;
     transform: translateY(-50%);
  	& input{
-		// height: 35px;
         width: 200px;
  		box-shadow: 0 1px 3px black;
  		border-radius: 5px;
@@ -178,7 +199,6 @@
  	& button{
  		box-shadow: 0 1px 3px black;
  		border-radius: 5px;
- 		// font-size: 24px;
  		&:hover{
  			transform: scale(1.1);
  			transition: all .3s;
@@ -506,7 +526,7 @@
 
 
 .footer__text{
-	background-color: lighten(grey, 40%);
+	background-color: lighten(grey, 25%);
  	text-align: center;
  	font-weight: bold;
  	line-height: 70px;
@@ -531,7 +551,15 @@
     	transform: scale(0.8);
     }
 	@media screen and (max-width: 800px){
-        
+
+        .about{
+        	display: block;
+        }
+
+        .about__intro{
+        	width: 100%;
+        }
+
         .search{
         	display: none;
         }
