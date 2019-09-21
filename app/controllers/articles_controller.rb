@@ -4,9 +4,6 @@ class ArticlesController < ApplicationController
   def about
   end
 
-  def archive
-  end
-
   def search
     @articles = Article.published.includes(:category).page(params[:page]).reverse_order.per(6).search(params[:search])
   end
